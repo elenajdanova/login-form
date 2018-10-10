@@ -1,4 +1,5 @@
 body{
+  box-sizing: border-box;
   display: flex;
   width: 100vw;
   height: 100vh;
@@ -14,7 +15,7 @@ main {
   height: 50vh;
 }
 
-/* Bordered form */
+/*form */
 form {
     background-color: #F4F4F8;
     box-shadow: 4px 4px 18px #aaaaaa;
@@ -38,6 +39,7 @@ input[type=password] {
     border-bottom: 0;
     border-left: 3px solid #00CC99;
     border-top: 0;
+    border-right: 0;
     box-sizing: border-box;
     background-color: #EDEDF2;
 }
@@ -46,7 +48,6 @@ input[type=text] {
   margin-bottom: 15px;
 }
 
-/*button */
 button {
     font-family: 'K2D', sans-serif;
     font-size: 16px;
@@ -66,7 +67,6 @@ button:hover {
 /* Add padding to containers */
 .container {
     padding: 12px;
-
 }
 
 .check {
@@ -93,4 +93,35 @@ a{
 
 a:hover{
  color: #808080a1;
+}
+
+.wrong{
+  background-color: #EFDCE0 !important;
+  border-color: #EFA7B8 !important;
+}
+
+.err{
+  text-align: center;
+  font-size: 16px;
+}
+
+.success{
+  text-align: center;
+  font-size: 16px;
+  color: #00CC99;
+  margin: 10px;
+}
+
+/*Small screens responsive*/
+@media screen and (max-width: 700px) {
+    main {
+      width: 60vw;
+    }
+}
+
+/*Large screens responsive*/
+@media screen and (min-width: 1100px) {
+    main {
+      width: 445px;
+    }
 }

@@ -7,32 +7,32 @@
 <link rel="stylesheet" href="login.css">
 </head>
 <body>
-
-    <main>
+  <main>
       <form action="action_page.php" method="post">
-        <div class="header">
-          <h2>Welcome back!</h2>
-        </div>
-        <div class="container">
-          <label for="uname">Username</label>
-          <input type="text" placeholder="Enter username" name="uname" required>
+          <div class="header">
+            <h2>Welcome back!</h2>
+          </div>
+          <div class="container">
+            <label for="uname">Username</label>
+            <input id = "uname" type="text" placeholder="Enter username" name="uname" required autofocus autocomplete="off">
 
-          <label for="psw">Password</label>
-          <input type="password" placeholder="Enter password" name="psw" required>
+            <label for="psw">Password</label>
+            <input id = "psw" type="password" placeholder="Enter password" name="psw" required autocomplete="off">
+            <div class="err"></div>
 
-          <button type="submit">Login</button>
-          <label>
-            <input type="checkbox" checked="checked" name="remember">
-            <span class="check">Remember me</span>
-          </label>
-        </div>
-
-        <div class="container frgt">
-          <a href="">Forgot password?</a>
-          <a class="newacc" href="">Register</a>
-        </div>
+            <button type="submit">Login</button>
+            <label>
+              <input type="checkbox" checked="checked" name="remember">
+              <span class="check">Remember me</span>
+            </label>
+          </div>
+          <div class="container frgt">
+            <a href="">Forgot password?</a>
+            <a class="newacc" href="">Register</a>
+          </div>
+          <div class="success"></div>
       </form>
-    </main>
+  </main>
     <script src="post.js"></script>
 </body>
 </html>

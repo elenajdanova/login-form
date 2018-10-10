@@ -3,28 +3,29 @@ window.addEventListener( "DOMContentLoaded", function() {
 
   form.addEventListener("submit", function (e){
     e.preventDefault();
-    let uname = e.target[0].value,
-        psw = e.target[1].value
-    let content = {}
+    let xhr = new XMLHttpRequest();
+    let formData = new FormData(e.target); //gathering user input data
 
-    .fetch("http://???"),{
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(content);
-        }
-    ) .then(function(response) {
-      if(response ok){
-        return response.json();
+    xhr.open("POST", "action_page.php"); //or e.target.action
+    xhr.onload = function (response) {
+      let output = response.target.responseText;
+      let uname = document.getElementById("uname"),
+          psw = document.getElementById("psw"),
+          err = document.querySelector('.err'),
+          success = document.querySelector('.success');
+
+      if (output != "Error"){
+        uname.classList.remove('wrong');
+        psw.classList.remove('wrong');
+        err.innerHTML = "";
+        success.innerHTML = output;
       } else {
-        return Promise.reject({
-          status: response.status,
-          statusText: response.statusText
-        })
+        success.innerHTML = "";
+        uname.classList.add('wrong');
+        psw.classList.add('wrong');
+        err.innerHTML = "Wrong username or password!";
       }
-    })
-    .then(function(response){
-      let bigObj = response;
-      })
-    })
+    }
+    xhr.send(formData); // sending POST request with user input data
+  })
+})
