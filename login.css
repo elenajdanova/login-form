@@ -21,6 +21,12 @@ form {
     box-shadow: 4px 4px 18px #aaaaaa;
 }
 
+fieldset{
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
 .header{
   background-color: #00CC99;
   width: 100%;
